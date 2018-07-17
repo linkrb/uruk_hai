@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import Facts from './facts.vue'
+import App from './App.vue'
 
 new Vue({
   el: '#app',
-  render: h => h(Facts)
+  render: h => h(App)
 })
