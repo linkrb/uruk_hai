@@ -1,9 +1,6 @@
 <template>
     <div>
-        <div>
-            <input v-model="message" placeholder="modifiez-moi">
-        </div>
-
+        <search v-on:changeSearch="updateSearch($event)"></search>
         <ul>
             <li v-for="fact in facts">
                 {{ fact.value }}
@@ -13,25 +10,26 @@
 </template>
 
 <script>
-  module.exports = {
+  import search from './components/search.vue';
+
+  export default {
+    components: {search},
     data: function () {
       return {
-        facts : [],
-        message: ''
+        facts : []
       }
-
     },
-    watch: {
-        message : function (val) {
-          if (val.length > 2) {
-            fetch('https://api.chucknorris.io/jokes/search?query='+val)
-              .then(response => response.json())
-              .then(json => {
-                  this.facts = json.result
-                }
-              )
-          }
+    methods: {
+      updateSearch: function(searchQuery) {
+        if (searchQuery.length > 2) {
+          fetch('https://api.chucknorris.io/jokes/search?query='+searchQuery)
+            .then(response => response.json())
+            .then(json => {
+                this.facts = json.result
+              }
+            )
         }
+      }
     }
   }
 </script>

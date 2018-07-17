@@ -2,6 +2,6 @@ import Vue from 'vue'
 import Facts from './facts.vue'
 
 new Vue({
-  el: '#list',
+  el: '#app',
   render: h => h(Facts)
 })
