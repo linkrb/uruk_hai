@@ -1,19 +1,20 @@
 <template>
     <div>
         <search v-on:changeSearch="updateSearch($event)"></search>
-        <ul>
-            <li v-for="fact in facts">
-                {{ fact.value }}
-            </li>
-        </ul>
+        <facts
+            v-for="fact in facts"
+            v-bind:key="fact.id"
+            v-bind:body="fact.value"
+        ></facts>
     </div>
 </template>
 
 <script>
   import search from './components/search.vue';
+  import facts from './components/facts.vue';
 
   export default {
-    components: {search},
+    components: {search, facts},
     data: function () {
       return {
         facts : []

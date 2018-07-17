@@ -1,7 +1,7 @@
 <template>
     <div>
         <label for="search">Hey enter query !</label>
-        <input
+        <input id="search"
                 v-bind:value="searchText"
                 v-on:input="$emit('changeSearch', $event.target.value)"
         >
