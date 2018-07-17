@@ -1,0 +1,199 @@
+/* ==========================================================================
+   #FORMS
+   ========================================================================== */
+
+/* Textarea
+  ========================================================================== */
+
+/*
+* Allow only vertical resizing of textareas.
+*/
+textarea {
+  resize: vertical;
+}
+
+/* Text input
+   ========================================================================== */
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="search"] {
+  display: block;
+  width: 100%;
+
+  border: solid 0.1rem $grey;
+  background-color: #fff;
+  border-radius: 0;
+
+  color: $font-family-main;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+
+  appearance: none;
+
+  transition: border-color 0.3s;
+
+  &::-moz-placeholder {
+    color: $grey;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $grey;
+  }
+
+  &:-ms-input-placeholder {
+    color: $grey;
+  }
+}
+
+/* Checkbox input
+  ========================================================================== */
+
+$checkbox-size: 1.6rem;
+$checkbox-margin: 1rem;
+
+input[type="checkbox"] {
+  display: none;
+
+  + label {
+    display: block;
+    position: relative;
+    margin-left: ($checkbox-size + $checkbox-margin);
+
+    outline: 0;
+
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: ($checkbox-size + $checkbox-margin) * -1;
+      width: $checkbox-size;
+      height: $checkbox-size;
+
+      border: solid 0.1rem $grey;
+      border-radius: 0;
+      background-color: #fff;
+    }
+
+    &:focus {
+      &::before {
+        border: dotted 0.1rem $outline-color;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: ($checkbox-size / 4);
+      left: ($checkbox-size + $checkbox-margin - ($checkbox-size / 4)) * -1;
+      width: ($checkbox-size / 2);
+      height: ($checkbox-size / 2);
+
+      box-shadow: inset 0 0 0 0 $grey-darker;
+
+      transition: box-shadow 0.2s;
+    }
+  }
+
+  &:checked {
+    + label {
+      &::after {
+        box-shadow: inset 0 0 0 0.5rem $grey-darker;
+      }
+    }
+  }
+}
+
+/* Radio input
+  ========================================================================== */
+
+$radio-size: 1.6rem;
+$radio-margin: 1rem;
+
+input[type="radio"] {
+  display: none;
+
+  /* stylelint-disable no-descending-specificity */
+  + label {
+    display: block;
+    position: relative;
+    margin-left: ($radio-size + $radio-margin);
+
+    outline: 0;
+
+    cursor: pointer;
+
+    &:focus {
+      &::before {
+        border: dotted 0.1rem $outline-color;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: ($radio-size + $radio-margin) * -1;
+      width: $radio-size;
+      height: $radio-size;
+
+      background-color: #fff;
+      border: solid 0.1rem $grey;
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: ($radio-size / 4);
+      left: ($radio-size + $radio-margin - ($radio-size / 4)) * -1;
+      width: ($radio-size / 2);
+      height: ($radio-size / 2);
+
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 0 $grey-darker;
+
+      transition: box-shadow 0.2s;
+    }
+  }
+  /* stylelint-enable no-descending-specificity */
+
+  &:checked {
+    + label {
+      &::after {
+        box-shadow: inset 0 0 0 0.5rem $grey-darker;
+      }
+    }
+  }
+}
+
+/* Submit button
+  ========================================================================== */
+button[type="submit"] {
+  margin: 0;
+
+  border: 0.2rem solid $grey;
+  border-radius: 50%;
+  background-color: $grey;
+
+  color: #fff;
+  font-size: inherit;
+  font-family: inherit;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  cursor: pointer;
+  appearance: none;
+  transition: border-color 0.2s, background-color 0.2s;
+
+  &:hover {
+    background-color: $grey-darker;
+    border-color: $grey-darker;
+  }
+}

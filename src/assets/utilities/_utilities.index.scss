@@ -1,0 +1,42 @@
+/* ==========================================================================
+   #UTILITIES
+   ========================================================================== */
+
+/**
+ * Utilities and helper classes with ability to override
+ * anything which goes before in the triangle, eg. hide helper class.
+ * The utilities are made immutable with `!important`.
+ * It’s important not to output any CSS in this layers.
+ *
+ * Classes in this layer are prefix with `u-`.
+ */
+
+/**
+ * CONTENTS
+ *
+ * UTILITIES
+ * Print................Reset-like styles taken from the HTML5 Boilerplate.
+ * Clearfix.............Bind our clearfix onto a utility class.
+ * Strip................Helper to remove tag style.
+ * Widths...............Width helper classes.
+ * Spacing..............Classes to apply global spacings.
+ * Visibility...........Bind our visibility mixins onto utility classes.
+ * Colors...............Simple class to override the font color.
+ * Headings.............Reassigning our heading styles to helper classes.
+ * Text.................Handle different text size.
+ * Align................Simple class to align the text.
+ * Images...............Make responsive an image.
+ * Icon.................Icones size utilities.
+ */
+@import "utilities.print";
+@import "utilities.clearfix";
+@import "utilities.strip";
+@import "utilities.widths";
+@import "utilities.spacings";
+@import "utilities.visibility";
+@import "utilities.colors";
+@import "utilities.headings";
+@import "utilities.text";
+@import "utilities.align";
+@import "utilities.images";
+@import "utilities.icones";

@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #COLORS
+   ========================================================================== */
+
+/* Site colors */
+$color-main:    #666;
+
+/* Site colors */
+$grey-lighter:  #eee;
+$grey:          #666;
+$grey-darker:   #333;
+
+$contrib-colors: (
+  grey-lighter: $grey-lighter,
+  grey: $grey,
+  grey-darker: $grey-darker,
+);

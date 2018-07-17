@@ -1,0 +1,36 @@
+/* ==========================================================================
+   #LIST
+   ========================================================================== */
+
+ol {
+  padding-left: 3.5rem;
+
+  li {
+    font-size: 2rem;
+  }
+}
+
+ul {
+  padding-left: 3.5rem;
+
+  li {
+    font-size: 2rem;
+  }
+}
+
+dl {
+  dt {
+    &::after {
+      content: ':';
+      margin: 0 0.5rem;
+    }
+
+    display: inline-block;
+
+    font-weight: 800;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
