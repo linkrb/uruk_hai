@@ -1,0 +1,96 @@
+.u-flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--full {
+    width: 100%;
+  }
+
+  &--nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &--align-start {
+    align-items: flex-start;
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &--align-end {
+    align-items: flex-end;
+  }
+
+  &--justify-center {
+    justify-content: center;
+  }
+
+  &--space-between {
+    justify-content: space-between;
+  }
+
+  &--justify-end {
+    justify-content: flex-end;
+  }
+
+  &--align-self-start {
+    align-self: flex-start;
+  }
+
+  &--align-self-center {
+    align-self: center;
+  }
+
+  &--align-self-end {
+    align-self: flex-end;
+  }
+
+  &--justify-left {
+    margin-left: auto;
+  }
+
+  &--justify-right {
+    margin-right: auto;
+  }
+}
+
+.u-flex-push {
+  order: 1;
+}
+
+.u-flex-reset {
+  order: 0;
+}
+
+.u-flex-pull {
+  order: -1;
+}
+
+@mixin flex($breakpoint: null) {
+  .u-flex-push#{$breakpoint} {
+    order: 1;
+  }
+
+  .u-flex-reset#{$breakpoint} {
+    order: 0;
+  }
+
+  .u-flex-pull#{$breakpoint} {
+    order: -1;
+  }
+}
+
+/**
+* Automatically generate spacing classes for each of our
+ * defined breakpoints, and give them a Responsive Suffix, e.g.:
+ *
+ * <div class="u-margin--xs@phablet">
+ */
+@if (variable-exists(mq-breakpoints)) {
+  @each $bp-name, $bp-value in $mq-breakpoints {
+    @include mq($from: $bp-name) {
+      @include flex(\@#{$bp-name});
+    }
+  }
+}

@@ -24,6 +24,7 @@ $spacing-directions: (
 
 $spacing-properties: (
   'margin': 'margin',
+  'padding': 'padding',
 );
 
 $spacing-sizes: (
@@ -67,3 +68,20 @@ $spacing-sizes: (
   }
 }
 
+/**
+ * Center an element with the site margins.
+ */
+.u-centered {
+  margin-left: $global-spacing-site-large !important;
+  margin-right: $global-spacing-site-large !important;
+
+  @include mq($until: desktop) {
+    margin-left: $global-spacing-site-medium !important;
+    margin-right: $global-spacing-site-medium !important;
+  }
+
+  @include mq($until: tablet) {
+    margin-left: $global-spacing-site-small !important;
+    margin-right: $global-spacing-site-small !important;
+  }
+}

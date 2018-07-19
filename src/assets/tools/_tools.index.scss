@@ -14,7 +14,9 @@
  * Breakpoints..........Mixin that helps you compose media queries.
  * Clearfix.............Mixin to drop micro clearfix.
  * Visibility...........Mixin for affecting visibility.
+ * Helper padding margin.......Mixin for padding margin.
  */
 @import "~sass-mq/mq";
 @import "tools.clearfix";
 @import "tools.visibility";
+@import "tools.padding-margin";

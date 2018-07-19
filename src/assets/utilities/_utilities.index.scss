@@ -27,6 +27,7 @@
  * Align................Simple class to align the text.
  * Images...............Make responsive an image.
  * Icon.................Icones size utilities.
+ * Flex.................Flex utilities.
  */
 @import "utilities.print";
 @import "utilities.clearfix";
@@ -40,3 +41,4 @@
 @import "utilities.align";
 @import "utilities.images";
 @import "utilities.icones";
+@import "utilities.flex";

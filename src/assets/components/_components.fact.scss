@@ -1,0 +1,26 @@
+.c-fact {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  @include p-a(1);
+}
+
+.c-fact-transition {
+
+  &-enter-active {
+    transition: all 1s;
+  }
+
+  &-leave-active {
+    transition: all 1s;
+  }
+
+  &-enter {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  &-leave-to {
+    opacity: 0;
+    transform: translateX(-3rem);
+  }
+
+}

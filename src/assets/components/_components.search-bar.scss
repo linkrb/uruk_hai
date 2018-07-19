@@ -1,0 +1,11 @@
+.c-search-bar {
+  position: relative;
+  @include p-b(5);
+
+  &__spinner {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
