@@ -28,8 +28,6 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: "uruk_hai.css",
       chunkFilename: "[uruk_hai].css"
     })
